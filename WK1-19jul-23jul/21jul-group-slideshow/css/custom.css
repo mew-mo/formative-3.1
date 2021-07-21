@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.tv {
+  position: fixed;
+  z-index: 999;
+}
+
+.img-scroll img {
+  position: absolute;
+  z-index: 50;
+  left: 160px;
+  top: 140px;
+}
+
+.down-arrow-container,
+.up-arrow-container {
+  width: 50px;
+}
+
+.up-arrow {
+  position: absolute;
+  z-index: -1;
+  width: 50px;
+  right: 550px;
+  top: 150px;
+}

@@ -91,10 +91,10 @@ var numOne = document.querySelector('#numInputOne'),
         two = numTwo.value,
         finalCalc = one/two;
 
-      if (two == 0) {
-        reject('you cannot divide by 0');
-      } else if (!one || !two) {
+      if (!one || !two) {
         reject('please enter numbers.');
+      } else if (two == 0) {
+        reject('you cannot divide by 0');
       }
 
       resolve(one + ' divided by ' + two + ' equals ' + finalCalc);
