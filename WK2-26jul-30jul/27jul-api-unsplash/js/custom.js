@@ -7,7 +7,8 @@
 
   $.ajax({
     // url: 'https://api.unsplash.com/photos?page=1&client_id='+key,
-    url: 'https://api.unsplash.com/photos/random?count=10&page=1&client_id='+key,
+    // url: 'https://api.unsplash.com/photos/random?count=10&page=1&client_id='+key,
+    url: 'https://api.unsplash.com/users/harleydavidson/?client_id='+key,
     type: 'GET',
     data: 'json',
     success: function(data) {
