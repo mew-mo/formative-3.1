@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="sass/custom.scss">
+  <link rel="stylesheet" href="css/custom.css">
   <title>news!</title>
 </head>
 <body>
@@ -21,20 +21,39 @@
     </div>
 
     <div class="col-4">
-      <input type="text" class="search-bar" placeholder="Search for stories...">
 
-      <select name="country" id="country">
-        <option value="nz">New Zealand</option>
-        <option value="aus">Australia</option>
-        <!-- section name is Australia news, id australia-news -->
-        <option value="us">U.S.A.</option>
-        <!-- US news -->
-        <option value="gb">England</option>
-      </select>
+      <div class="row">
 
-      <button type="button" name="button" class="btn btn-info">Go</button>
+        <input type="text" class="form-control search-bar" placeholder="Search for stories..." aria-label="search" aria-describedby="searchBtn">
+        <button class="btn btn-outline-secondary" type="button" id="searchBtn">Search</button>
+      </div>
+
+      <div class="row">
+        <select name="country" id="country" class="custom-select col-4 country">
+          <option selected value="">-Country-</option>
+          <option value="nz">New Zealand</option>
+          <option value="australia">Australia</option>
+          <!-- section name is Australia news, id australia-news -->
+          <option value="us">U.S.A.</option>
+          <!-- US news -->
+          <option value="uk">England</option>
+          <option value="world">World</option>
+        </select>
+
+        <select name="category" id="category" class="custom-select col-4 category">
+          <option selected value="">-Category-</option>
+          <option value="sport">Sport</option>
+          <option value="technology">Technology</option>
+          <option value="environment">Environment</option>
+          <option value="politics">Politics</option>
+        </select>
+
+      </div>
+      <!-- selectbox riws ends -->
     </div>
+    <!-- col4 ends -->
   </div>
+  <!-- row ends -->
 
   <div class="container row d-flex justify-content-center">
     <!-- get fontawesome icons for l8r -->

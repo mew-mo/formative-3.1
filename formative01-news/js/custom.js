@@ -1,9 +1,11 @@
 
   var myKey = JSON.parse(myKey),
-    key = myKey[0].key;
+    key = myKey[0].key,
+    searchBtn = document.querySelector('#searchBtn'),
+    queryUrl = 'https://content.guardianapis.com/search?show-fields=headline,trailText,thumbnail,byline&show-elements=all&api-key=' + key;
 
   $.ajax({
-    url: 'https://content.guardianapis.com/search?show-fields=headline,trailText,thumbnail,byline&show-elements=all&api-key=' + key,
+    url: queryUrl,
     type: 'GET',
     data: 'json',
     success: function(data) {
@@ -27,10 +29,42 @@
     error: function(){
       console.log('error');
     }
-
-//  UP NEXT,
-//  SO LIKE we take the user's search query and put it in a variable that passes through the url link thingy dingy in the ajax. this makes it dynamic -- UPDATE IT SO IT CHANGES every time the user types soemthing and clicks enter, create new request to the server i guess??? this is logical i guess??? i think? :3
-
-
-
   });
+  // ajax ENDS
+
+
+  //  UP NEXT,
+  //  SO LIKE we take the user's search query and put it in a variable that passes through the url link thingy dingy in the ajax. this makes it dynamic -- UPDATE IT SO IT CHANGES every time the user types soemthing and clicks enter, create new request to the server i guess??? this is logical i guess??? i think? :3
+
+  searchBtn.addEventListener('click', updateSearch, false);
+
+  function updateSearch() {
+    var userQuery = document.querySelector('.search-bar').value,
+      userCountry = document.querySelector('#country').value,
+      userCategory = document.querySelector('#category').value,
+      addQuery,
+      addCountry,
+      addCategory;
+
+    if (!userQuery) {
+      addQuery = '';
+    } else {
+      addQuery = '&q=' + userQuery;
+    }
+
+    if (!userCountry) {
+      addCountry = '';
+    } else {
+      addCountry = '&tag=' + userCountry;
+    }
+
+    if (!userCategory) {
+      addCategory = '';
+    } else {
+      addCategory = '&section=' + userCategory;
+    }
+
+    var queryUrl = 'https://content.guardianapis.com/search?show-fields=headline,trailText,thumbnail,byline&show-elements=all' + addQuery + addCountry + addCategory + '&api-key=' + key;
+
+    console.log(queryUrl);
+  }

@@ -23,19 +23,45 @@ module.exports = function(grunt) {
         // 'widgets.css': 'widgets.scss'
         }
       }
+    },
+    jshint: {
+      options: {
+        globals: {
+          jQuery: true
+        },
+      },
+      files: {
+        src: ['js/custom.js']
+      },
+    },
+    csslint: {
+      files: {
+        src: ['css/custom.css']
+      }
+    },
+    watch: {
+      scripts: {
+        files: ['js/custom.js', 'sass/custom.scss', 'index.html'],
+        tasks: ['uglify', 'sass', 'jshint'],
+        options: {
+          reload: true,
+          livereload: true
+        },
+      },
     }
   });
 
   // Load the plugin that provides the "uglify" task.
   grunt.loadNpmTasks('grunt-contrib-uglify');
-
   grunt.loadNpmTasks('grunt-contrib-sass');
-
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['uglify', 'sass']);
+  grunt.registerTask('default', ['watch', 'uglify', 'sass', 'jshint', 'csslint']);
 
-  // grunt.registerTask('prod', ['uglify']);
-
+  grunt.registerTask('dev', ['watch', 'sass', 'jshint', 'csslint']);
+  grunt.registerTask('prod', ['uglify']);
 
 };
