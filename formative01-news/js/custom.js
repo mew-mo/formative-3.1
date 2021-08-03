@@ -3,6 +3,8 @@
     key = myKey[0].key,
     searchBtn = document.querySelector('#searchBtn'),
     newsContainer = document.querySelector('.container'),
+    aboutContainer = document.querySelector('.about-me'),
+    abtLink = document.querySelector('.abt-link'),
     queryUrl = 'https://content.guardianapis.com/search?show-fields=headline,trailText,thumbnail,byline&show-elements=all&api-key=' + key;
 
     $.ajax({
@@ -21,6 +23,7 @@
                 '<h5 class="card-title" style="padding-top:20px;">' + data.response.results[i].fields.headline + '</h5>' +
                 '<p class="card-text">' + data.response.results[i].fields.trailText + '</p>' +
                 '<p class="card-text" style="text-align:right;  font-style: italic;">' + data.response.results[i].fields.byline + '</p>' +
+                '<a href="' + data.response.results[i].webUrl+ '" class="stretched-link"></a>' +
               '</div>' +
             '</div>' +
           '</div>';
@@ -35,7 +38,6 @@
 
 
   function updateDom() {
-
     while (newsContainer.firstChild) {
       newsContainer.removeChild(newsContainer.lastChild);
     }
@@ -57,6 +59,7 @@
                 '<h5 class="card-title" style="padding-top:20px;">' + data.response.results[i].fields.headline + '</h5>' +
                 '<p class="card-text">' + data.response.results[i].fields.trailText + '</p>' +
                 '<p class="card-text" style="text-align:right;  font-style: italic;">' + data.response.results[i].fields.byline + '</p>' +
+                '<a href="' + data.response.results[i].webUrl+ '" class="stretched-link"></a>' +
               '</div>' +
             '</div>' +
           '</div>';
@@ -83,6 +86,9 @@
       addCountry,
       addCategory;
 
+    newsContainer.style.opacity = 1;
+    aboutContainer.style.opacity = 0;
+
     if (!userQuery) {
       addQuery = '';
     } else {
@@ -108,3 +114,8 @@
   }
 
     searchBtn.addEventListener('click', updateSearch, false);
+
+    abtLink.addEventListener('click', () => {
+      newsContainer.style.opacity = 0;
+      aboutContainer.style.opacity = 1;
+    }, false);

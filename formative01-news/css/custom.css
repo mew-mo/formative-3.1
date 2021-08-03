@@ -10747,11 +10747,12 @@ textarea.form-control-lg {
   }
 }
 body {
-  background: #cbe0f4;
+  background: #adc3d7;
   overflow-x: hidden;
 }
 
 h1, .h1 {
+  color: white;
   padding: 30px 0 30px 0;
   margin-left: 50px;
 }
@@ -10768,6 +10769,18 @@ select[name^=category] {
 select[name^=category],
 select[name^=country] {
   width: 147px;
+}
+
+.nav {
+  padding-left: 300px;
+}
+
+.nav:hover {
+  color: white;
+}
+
+.navy {
+  color: #283380;
 }
 
 .search-bar {
@@ -10797,6 +10810,19 @@ select[name^=country] {
 .row {
   margin-left: auto;
   margin-right: auto;
+}
+
+.about-me {
+  position: absolute;
+  top: 200px;
+  left: 25%;
+  right: 25%;
+  width: 60%;
+  opacity: 0;
+}
+
+.abt-link {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=custom.css.map */
