@@ -1,5 +1,5 @@
 body {
-  background: #adc3d7;
+  background: #2f303e;
   overflow-x: hidden;
 }
 
@@ -23,20 +23,16 @@ select[name^=country] {
   width: 147px;
 }
 
-.about-img {
-  width: 100px;
-}
-
 .nav {
   padding-left: 300px;
 }
 
-.nav:hover {
-  color: white;
+.main {
+  color: #87c1f5;
 }
 
-.navy {
-  color: #283380;
+.accent {
+  color: #ee9d5b;
 }
 
 .search-bar {
@@ -76,8 +72,47 @@ select[name^=country] {
   width: 60%;
   opacity: 0;
 }
+.about-me .card-text {
+  padding-top: 20px;
+}
+.about-me .card-title {
+  padding-bottom: 20px;
+  border-bottom: 3px solid #ee9d5b;
+}
+
+.about-img {
+  width: 90%;
+}
 
 .abt-link {
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.abt-link:hover {
+  color: white;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #ee9d5b;
+  border-color: #ee9d5b;
+}
+
+.news-content .card-title {
+  padding-bottom: 15px;
+  border-bottom: 2px solid #ee9d5b;
+}
+.news-content .card-text {
+  padding-top: 15px;
+}
+.news-content .card {
+  transition: all 0.5s ease;
+}
+.news-content .card:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+  border: 5px solid #ee9d5b;
   cursor: pointer;
 }
 
