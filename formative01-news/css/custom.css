@@ -27,7 +27,7 @@ select[name^=country] {
   padding-left: 300px;
 }
 
-.main {
+.primary {
   color: #87c1f5;
 }
 
@@ -39,12 +39,6 @@ select[name^=country] {
   max-width: 300px;
   height: 40px;
   padding: 5px;
-  margin: 0;
-  margin-right: 30px;
-  margin: 10px 0 10px 0;
-}
-
-.input-group {
   margin: 10px 0 10px 0;
 }
 
@@ -64,20 +58,27 @@ select[name^=country] {
   margin-right: auto;
 }
 
+.container {
+  display: block;
+}
+
 .about-me {
   position: absolute;
   top: 200px;
   left: 25%;
   right: 25%;
   width: 60%;
-  opacity: 0;
 }
 .about-me .card-text {
   padding-top: 20px;
 }
 .about-me .card-title {
+  padding-top: 15%;
   padding-bottom: 20px;
   border-bottom: 3px solid #ee9d5b;
+}
+.about-me .card-body {
+  padding-right: 50px;
 }
 
 .about-img {
@@ -85,6 +86,7 @@ select[name^=country] {
 }
 
 .abt-link {
+  color: #87c1f5;
   cursor: pointer;
   transition: all 0.5s ease;
 }
@@ -114,6 +116,111 @@ select[name^=country] {
   transform: scale(1.05);
   border: 5px solid #ee9d5b;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav {
+    padding-left: 60%;
+    margin-top: -96px;
+  }
+
+  .search-bar {
+    max-width: 85%;
+    height: 40px;
+    padding: 5px;
+    margin: 10px 0 10px 7%;
+  }
+
+  #country {
+    margin-left: 7%;
+  }
+
+  #country,
+#category {
+    width: 42%;
+  }
+
+  .filters {
+    padding-bottom: 35px;
+    border-bottom: 3px solid #ee9d5b;
+  }
+
+  .news-content {
+    padding-top: 25px;
+  }
+
+  .about-img {
+    width: 100%;
+  }
+
+  .about-me {
+    position: absolute;
+    top: 230px;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+  }
+  .about-me .card-body {
+    padding-right: 18px;
+  }
+  .about-me .card-title {
+    padding-top: 30px;
+  }
+  .about-me .card-text {
+    padding-bottom: 15px;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 980px) {
+  .nav {
+    padding-left: 55%;
+    margin-top: 10px;
+  }
+
+  .search-bar {
+    max-width: 85%;
+    height: 40px;
+    padding: 5px;
+    margin: 10px 0 10px 7%;
+  }
+
+  #country {
+    margin-left: 7%;
+  }
+
+  #country,
+#category {
+    width: 42%;
+  }
+
+  .filters {
+    padding-bottom: 35px;
+    border-bottom: 3px solid #ee9d5b;
+  }
+
+  .news-content {
+    padding-top: 25px;
+  }
+
+  .about-img {
+    width: 100%;
+  }
+
+  .about-me {
+    position: absolute;
+    top: 230px;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+  }
+  .about-me .card-body {
+    padding-right: 18px;
+  }
+  .about-me .card-title {
+    padding-top: 30px;
+  }
+  .about-me .card-text {
+    padding-bottom: 15px;
+  }
 }
 
 /*# sourceMappingURL=custom.css.map */

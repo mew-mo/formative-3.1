@@ -42,7 +42,7 @@ module.exports = function(grunt) {
     },
     watch: {
       scripts: {
-        files: ['js/custom.js', 'sass/custom.scss', 'index.html', 'sass/_vars.scss'],
+        files: ['js/custom.js', 'sass/custom.scss', 'index.html', 'sass/_vars.scss', 'sass/_media-queries.scss'],
         tasks: ['uglify', 'sass', 'jshint'],
         options: {
           reload: true,

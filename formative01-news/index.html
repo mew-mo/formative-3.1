@@ -12,67 +12,54 @@
 
   <div class="row d-flex align-items-center">
 
-    <div class="col-4 title">
-      <h1><span class="main">SELECT</span>news</h1>
+    <div class="col-lg-4 col-sm-1 title">
+      <h1><span class="primary">SELECT</span>news</h1>
     </div>
 
-    <div class="col-4 nav main">
+    <div class="col-lg-4 col-md-10 col-sm-1 nav main">
       <h4 class="abt-link">About Me</h4>
     </div>
 
-    <div class="col-4">
+    <div class="col-lg-4 col-sm-12">
       <div class="row">
 
         <input type="text" class="form-control search-bar" placeholder="Search for stories..." aria-label="search" aria-describedby="searchBtn">
         <button class="btn btn-outline-secondary" type="button" id="searchBtn">Search</button>
       </div>
 
-      <div class="row">
-        <select name="country" id="country" class="custom-select col-4 country">
+      <div class="row filters">
+        <select name="country" id="country" class="custom-select col-lg-4 col-sm-6 country">
           <option selected value="">-Country-</option>
-          <option value="new-zealand">New Zealand</option>
+          <option value="america">America</option>
           <option value="australia">Australia</option>
-          <option value="america">U.S.A.</option>
+          <option value="china">China</option>
           <option value="england">England</option>
+          <option value="new-zealand">New Zealand</option>
           <option value="world">World</option>
         </select>
 
-        <select name="category" id="category" class="custom-select col-4 category">
+        <select name="category" id="category" class="custom-select col-lg-4 col-sm-6 category">
           <option selected value="">-Category-</option>
-          <option value="sport">Sport</option>
-          <option value="technology">Technology</option>
+          <option value="celebrities">Celebrities</option>
           <option value="environment">Environment</option>
           <option value="politics">Politics</option>
+          <option value="sport">Sport</option>
+          <option value="technology">Technology</option>
         </select>
 
       </div>
-      <!-- selectbox rows ends -->
+      <!-- selectbox rows ENDS -->
     </div>
-    <!-- col4 ends -->
+    <!-- col4 ENDS -->
   </div>
-  <!-- row ends -->
+  <!-- row ENDS -->
 
   <div class="container row d-flex justify-content-center news-content">
   </div>
 
   <div class="abt-section">
-    <div class="about-me row d-flex justify-content-center">
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-3">
-              <img src="img/ninja.jpg" class="about-img" alt="the dev">
-            </div>
-            <div class="col-8">
-              <h3 class="card-title">About Me</h3>
-              <p class="card-text">Hi, I'm Mo, the dev behind this little project. I'm a Web UX Student at Yoobee Colleges in Wellington, raised in the mountains of the South Island. I like learning, cats and rainy days viewed from indoors. This project was a formative for module 3 of my course that involved getting requests from a News API- The Guardian, for this project in particular. It filters the most relevant results based on your search terms and/or filters.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- i am very very cool, please believe me -->
-    </div>
   </div>
+  <!-- abt section ENDS -->
 
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>

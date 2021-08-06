@@ -1,0 +1,115 @@
+// extra small devices (phones, 600px and down)----------------------------
+@media only screen and (max-width: 600px) {
+
+  .nav {
+    padding-left: 60%;
+    margin-top: -96px;
+  }
+
+  .search-bar {
+    max-width: 85%;
+    height: 40px;
+    padding: 5px;
+    margin: 10px 0 10px 7%;
+  }
+
+  #country {
+    margin-left: 7%;
+  }
+
+  #country,
+  #category {
+    width: 42%;
+  }
+
+  .filters {
+    padding-bottom: 35px;
+    border-bottom: 3px solid $accent;
+  }
+
+  .news-content {
+    padding-top: 25px;
+  }
+
+  .about-img {
+    width: 100%;
+  }
+
+  .about-me {
+    position: absolute;
+    top: 230px;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+
+    .card-body {
+      padding-right: 18px;
+    }
+
+    .card-title {
+      padding-top: 30px;
+    }
+
+    .card-text {
+      padding-bottom: 15px;
+    }
+  }
+}
+
+// medium devices (tablets, 980px down to 600px)----------------------------
+@media only screen and (min-width: 600px) and (max-width: 980px) {
+
+  .nav {
+    padding-left: 55%;
+    margin-top: 10px;
+  }
+
+  .search-bar {
+    max-width: 85%;
+    height: 40px;
+    padding: 5px;
+    margin: 10px 0 10px 7%;
+  }
+
+  #country {
+    margin-left: 7%;
+  }
+
+  #country,
+  #category {
+    width: 42%;
+  }
+
+  .filters {
+    padding-bottom: 35px;
+    border-bottom: 3px solid $accent;
+  }
+
+  .news-content {
+    padding-top: 25px;
+  }
+
+  .about-img {
+    width: 100%;
+  }
+
+  .about-me {
+    position: absolute;
+    top: 230px;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+
+    .card-body {
+      padding-right: 18px;
+    }
+
+    .card-title {
+      padding-top: 30px;
+    }
+
+    .card-text {
+      padding-bottom: 15px;
+    }
+  }
+}

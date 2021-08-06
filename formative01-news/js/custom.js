@@ -3,9 +3,10 @@
     key = myKey[0].key,
     searchBtn = document.querySelector('#searchBtn'),
     newsContainer = document.querySelector('.container'),
-    aboutContainer = document.querySelector('.about-me'),
+    aboutContainer = document.querySelector('.abt-section'),
     abtLink = document.querySelector('.abt-link'),
-    page = document.querySelector('body'),
+    countrySelect = document.querySelector('#country'),
+    categorySelect = document.querySelector('#category'),
     queryUrl = 'https://content.guardianapis.com/search?show-fields=headline,trailText,thumbnail,byline&show-elements=all&api-key=' + key;
 
     $.ajax({
@@ -17,7 +18,7 @@
         console.log(data.response.results);
         for (var i = 0; i < data.response.results.length; i++) {
           document.querySelector('.container').innerHTML +=
-          '<div class="col-4">' +
+          '<div class="col-lg-4 col-md-6 col-sm-12">' +
             '<div class="card">' +
               '<div class="card-body">' +
                 '<img src="' + data.response.results[i].fields.thumbnail + '" style="width:100%;">' +
@@ -29,7 +30,7 @@
             '</div>' +
           '</div>';
         }
-        // for loop ends here but at what cost
+        // for loop ends
       },
       error: function(){
         console.log('error');
@@ -52,7 +53,7 @@
         console.log(data.response.results);
         for (var i = 0; i < data.response.results.length; i++) {
           document.querySelector('.container').innerHTML +=
-          '<div class="col-4">' +
+          '<div class="col-lg-4 col-md-6 col-sm-12">' +
             '<div class="card">' +
               '<div class="card-body">' +
                 '<img src="' + data.response.results[i].fields.thumbnail + '" style="width:100%;">' +
@@ -64,7 +65,7 @@
             '</div>' +
           '</div>';
         }
-        // for loop ends here but at what cost
+        // for loop ends
       },
       error: function(){
         console.log('error');
@@ -74,10 +75,6 @@
   }
   // updatedom ends
 
-
-  //  UP NEXT,
-  //  SO LIKE we take the user's search query and put it in a variable that passes through the url link thingy dingy in the ajax. this makes it dynamic -- UPDATE IT SO IT CHANGES every time the user types soemthing and clicks enter, create new request to the server i guess??? this is logical i guess??? i think? :3
-
   function updateSearch() {
     var userQuery = document.querySelector('.search-bar').value,
       userCountry = document.querySelector('#country').value,
@@ -86,10 +83,9 @@
       addCountry,
       addCategory;
 
-    newsContainer.style.opacity = 1;
-    aboutContainer.style.opacity = 0;
-    page.style.overflowY = 'auto';
-
+    while (aboutContainer.firstChild) {
+      aboutContainer.removeChild(aboutContainer.lastChild);
+    }
 
     if (!userQuery) {
       addQuery = '';
@@ -116,9 +112,28 @@
   }
 
     searchBtn.addEventListener('click', updateSearch, false);
+    countrySelect.addEventListener('change', updateSearch, false);
+    categorySelect.addEventListener('change', updateSearch, false);
 
     abtLink.addEventListener('click', () => {
-      newsContainer.style.opacity = 0;
-      aboutContainer.style.opacity = 1;
-      page.style.overflowY = 'hidden';
+      while (newsContainer.firstChild) {
+        newsContainer.removeChild(newsContainer.lastChild);
+      }
+
+      aboutContainer.innerHTML += '<div class="about-me row d-flex justify-content-center">' +
+        '<div class="card">' +
+          '<div class="card-body">' +
+            '<div class="row">' +
+              '<div class="col-lg-5 col-sm-12">' +
+                '<img src="img/ninja.jpg" class="about-img" alt="the dev">' +
+              '</div>' +
+              '<div class="col-lg-7 col-sm-12">' +
+                '<h3 class="card-title">About Me</h3>' +
+                '<p class="card-text">Hi, I\'m Mo, the dev behind this little project. I\'m a Web UX Student at Yoobee Colleges in Wellington, raised in the mountains of New Zealand\'s South Island. I like learning, cats and rainy days viewed from indoors. This project was a formative for module 3 of my course that involved getting requests from a News API- The Guardian, for this project in particular. It filters the most relevant results based on your search terms and/or filters. Due to the nature of the free API, results won\'t always be extremely relevant depending on your search and combination of filters, however it does its best to pick out the closest stories!</p>' +
+              '</div>' +
+            '</div>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+
     }, false);
