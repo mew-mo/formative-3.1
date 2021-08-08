@@ -62,6 +62,7 @@ module.exports = function(grunt) {
   // Default task(s).
   grunt.registerTask('default', ['watch', 'uglify', 'sass', 'jshint', 'csslint']);
 
+  // tasks for either development or production
   grunt.registerTask('dev', ['watch', 'sass', 'jshint', 'csslint']);
   grunt.registerTask('prod', ['uglify']);
 
